@@ -8,5 +8,17 @@
 </head>
 <body>
     <h2>Hello world</h2>
+    <button id="show-alert">Show alert</button>
+
+
+    <script>
+        const WebApp = window.Telegram.WebApp;
+        
+        const btn = document.getElementById('show-alert');
+        btn.addEventListener('click', (e) => {
+            WebApp.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
+        })
+
+    </script>
 </body>
 </html>
