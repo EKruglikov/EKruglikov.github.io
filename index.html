@@ -5,20 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
-    <h2>Hello world</h2>
-    <button id="show-alert">Show alert</button>
+    <div id="app">
+        <h2>Hello world</h2>
+        <button @click="showMessage">Show alert</button>
+    </div>
 
 
     <script>
         const WebApp = window.Telegram.WebApp;
-        
-        const btn = document.getElementById('show-alert');
-        btn.addEventListener('click', (e) => {
-            WebApp.showAlert(`Добро пожаловать, Егор.`);
-        })
-
+        Vue.createApp({
+            data: () => ({
+                title: "Hello"
+            }),
+            methods: {
+                showMessage() {
+                    WebApp.showAlert(`Привет: ${WebApp.WebAppUser.first_name}`);
+                }
+            }
+        }).mount('#app')
     </script>
 </body>
 </html>
