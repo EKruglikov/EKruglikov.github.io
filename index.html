@@ -10,7 +10,7 @@
 <body>
     <div id="app">
         <h2>Hello world</h2>
-        <button @click="showMessage">Show alert</button>
+        <button @click.native="showMessage">Show alert</button>
     </div>
 
 
@@ -22,7 +22,7 @@
             }),
             methods: {
                 showMessage() {
-                    WebApp.showAlert(`Привет: ${WebApp.WebAppUser.first_name}`);
+                    WebApp.showAlert(`Привет: ${WebApp.initDataUnsafe.user.first_name}`);
                 }
             }
         }).mount('#app')
