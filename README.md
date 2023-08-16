@@ -1,2 +1,0 @@
-# EKruglikov.github.io
-Personal
